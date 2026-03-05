@@ -13,6 +13,28 @@ Ask security questions in plain English — get professional SOC analyst reports
 
 ---
 
+## Screenshots
+
+### Dashboard — Natural Language Query with Multi-LLM Provider Selector
+![Dashboard Query](docs/screenshots/01-dashboard-query.png)
+
+### AI-Generated Security Intelligence Report
+![AI Analysis Report](docs/screenshots/02-ai-analysis-report.png)
+
+### Critical Findings — Brute Force Detection & Pass-the-Hash Analysis
+![Critical Findings](docs/screenshots/03-critical-findings.png)
+
+### Top Security Events Table with Clickable Wazuh Dashboard Links
+![Security Events Table](docs/screenshots/04-security-events-table.png)
+
+### Alert Distribution & MITRE ATT&CK Coverage Charts
+![MITRE Charts](docs/screenshots/05-mitre-charts.png)
+
+### Professional Branded HTML Report Export
+![HTML Report Export](docs/screenshots/06-html-report-export.png)
+
+---
+
 ## How It Works
 
 1. **You ask** a natural language question via the web dashboard or API
